@@ -1,0 +1,8 @@
+2018-12-21 10:27:16,285:ERROR:discord: This should go to both console and file
+2018-12-21 10:27:35,229:DEBUG:discord.client: Dispatching event socket_raw_receive
+2018-12-21 10:27:35,230:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'PRESENCE_UPDATE', 's': 3, 'op': 0, 'd': {'user': {'id': '123591822579597315'}, 'status': 'online', 'roles': ['485693153819492352'], 'nick': None, 'guild_id': '339228390605193216', 'game': {'type': 3, 'name': '- to ❄ | 89m to  🌙 | @Genesis help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1545406054905}, 'client_status': {'web': 'online'}, 'activities': [{'type': 3, 'name': '- to ❄ | 89m to  🌙 | @Genesis help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1545406054905}]}}
+2018-12-21 10:27:35,230:DEBUG:discord.client: Dispatching event socket_response
+2018-12-21 10:27:35,230:DEBUG:discord.client: Dispatching event member_update
+2018-12-21 10:27:44,832:INFO:discord.client: Cleaning up event loop.
+2018-12-21 10:27:45,225:INFO:discord.client: Cleaning up event loop.
+2018-12-21 10:27:45,225:INFO:discord.client: Cleaning up after 6 tasks
