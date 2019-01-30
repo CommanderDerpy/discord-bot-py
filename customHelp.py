@@ -71,6 +71,11 @@ class Paginator:
 
 class CustomHelp(commands.HelpFormatter):
 
+	def get_ending_note(self):
+		command_name = self.context.invoked_with
+		return "Type {0}{1} command for more info on a command.\n" \
+			"You can also type \"{0}{1} <category>\" for more info on a category and \"{0}{1} <command>\" for more info on a specific command".format(self.clean_prefix, command_name)
+
 	async def format(self):
 		"""Handles the actual behaviour involved with formatting.
 		To change the behaviour, this method should be overridden.

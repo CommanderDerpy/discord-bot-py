@@ -6,8 +6,9 @@ import aiohttp
 import asyncio
 # String re
 import re
-# PArse html
+# Parse html
 from bs4 import BeautifulSoup
+from discord.ext.commands.cooldowns import BucketType
 
 def setup(bot):
   #Basic class Setup
@@ -23,16 +24,17 @@ class Tarkov:
   def __init__(self, bot):
       self.bot = bot
 
-  @commands.command(name='search')
+  @commands.command(name='wiki')
   async def tarkov_search(self, ctx, searchTerm, numberOfResults=1):
       """
-        Foo
+        Search the Tarkov wiki for an item
 
         Parameters:
-            x
+          Search term - required - This is the search term
+          number of posts - optional - default 1 - number of results
 
         Returns:
-            x
+            A link to a wiki post related to the search term
       """
       async with ctx.channel.typing():
         # Restrict the number of returned results to 5
@@ -65,15 +67,16 @@ class Tarkov:
       await ctx.send(embed=embed)
 
   @commands.command(name='news')
+  @commands.cooldown(1,120,BucketType.default)
   async def tarkov_news(self, ctx):
-      """hi
-        Foo
+      """
+        Get the latest new from the Offical Tarkov website
 
         Parameters:
-            x
+            none
 
         Returns:
-            x
+            A link to the latest Tarkov new post.
       """
       url = 'https://www.escapefromtarkov.com'
       async with ctx.channel.typing():
@@ -105,13 +108,7 @@ class Tarkov:
   @commands.command(name='newsFive')
   async def tarkov_newsFive(self, ctx):
         """
-          Foo http://tarkov.sheiddy.com/Useful
-
-          Parameters:
-              x
-
-          Returns:
-              x
+          This should go :(
         """
         url = 'https://www.escapefromtarkov.com'
         async with ctx.channel.typing():
@@ -149,13 +146,13 @@ class Tarkov:
   @commands.command(name='links')
   async def tarkov_links(self, ctx):
         """
-          Foo
+          A collection of useful links related to Tarkov
 
           Parameters:
-              x
+              None
 
           Returns:
-              x
+              A collection of useful links
         """
         url = 'https://www.escapefromtarkov.com'
         async with ctx.channel.typing():
@@ -173,13 +170,13 @@ class Tarkov:
   @commands.command(name='maps', description='description on map stuff')
   async def tarkov_maps(self, ctx):
         """
-          Foo
+          A collection of maps
 
           Parameters:
-              x
+              none
 
           Returns:
-              x
+              A collection of maps
         """
         async with ctx.channel.typing():
           async with aiohttp.ClientSession() as cs:
@@ -197,7 +194,7 @@ class Tarkov:
             # Shoreline
             embed.add_field(name="Shoreline", value="[Gamepedia](https://escapefromtarkov.gamepedia.com/Shoreline)\n[Map](https://c-7npsfqifvt34x24e2v6q4m5x78qbz4lx2edmpvegspoux2eofu.g00.gamepedia.com/g00/3_c-7ftdbqfgspnubslpw.hbnfqfejb.dpn_/c-7NPSFQIFVT34x24iuuqtx3ax2fx2fe2v6q4m5x78qbz4l.dmpvegspou.ofux2fftdbqfgspnubslpw_hbnfqfejbx2f6x2f64x2fTipsfmjofNbqTqbx78otFyjutLfzt.kqhx3fwfstjpox3d8c1518bfc09752g40051f1eg668e7ebd_$/$/$/$/$?i10c.ua=1&i10c.dv=14)\n[Sanatorium Map](https://c-7npsfqifvt34x24e2v6q4m5x78qbz4lx2edmpvegspoux2eofu.g00.gamepedia.com/g00/3_c-7ftdbqfgspnubslpw.hbnfqfejb.dpn_/c-7NPSFQIFVT34x24iuuqtx3ax2fx2fe2v6q4m5x78qbz4l.dmpvegspou.ofux2fftdbqfgspnubslpw_hbnfqfejbx2f6x2f66x2fSftpsuSppntOfx78.kqhx3fwfstjpox3d1354gb2806505gebd68ec29c2e61586e_$/$/$/$/$?i10c.ua=1&i10c.dv=14)\n[Interactive Map](https://eftmkg.com/shoreline-full.html)", inline=True)
             # TerraGroup Labs
-            embed.add_field(name="TerraGroup Labs", value="Soon™️", inline=True)
+            embed.add_field(name="TerraGroup Labs", value="[Gamepedia](https://c-4tvylwolbz88x24k8b2w0s1dwhf0rx2ejsvbkmyvuax2eula.g00.gamepedia.com/g00/3_c-4lzjhwlmyvtahyrvc.nhtlwlkph.jvt_/c-4TVYLWOLBZ88x24oaawzx3ax2fx2fk8b2w0s1dwhf0r.jsvbkmyvua.ulax2flzjhwlmyvtahyrvc_nhtlwlkphx2f7x2f7ix2fAolShiThwMbss.wunx3fclyzpvux3dkh7ik881606kj0i9i787h6h46mi359ki_$/$/$/$/$?i10c.ua=1&i10c.dv=21)\n[]()", inline=True)
             # Placeholder
             # embed.add_field(name="Customs", value="[Gamepedia]()\n[Map]()\n[Interactive Map]()", inline=True)
 
