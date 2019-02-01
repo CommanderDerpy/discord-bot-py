@@ -1,6 +1,10 @@
-source bot-env/bin/activate
+# Prime - Tarkov bot
+This bot is written is Discord.py (rewrite)
 
-Required
+## Resources
+(Discord.py - Rewrite)[https://discordpy.readthedocs.io/en/rewrite/api.html]
+
+## Required
 
 1. Go to your project’s working directory:
 ```
