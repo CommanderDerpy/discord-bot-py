@@ -51,7 +51,7 @@ async def on_message(message):
 
 @bot.event
 async def on_ready():
-	print('\nLogged in as: \t\t' + bot.user.name + '\nUserID:\t\t\t' + bot.user.id + '\nBot Owner:\t\t' +str(config['owner']) +'\n\nersion: \t\t' +version +'\nDiscord.py Version: \t' +discord.__version__)
+	print('\nLogged in as: \t\t' + bot.user.name + '\nUserID:\t\t\t' + str(bot.user.id) + '\nBot Owner:\t\t' +str(config['owner']) +'\n\nersion: \t\t' +version +'\nDiscord.py Version: \t' + str(discord.__version__))
 	print('Successfully logged in and booted...!')
 
 @bot.event
