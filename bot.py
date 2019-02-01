@@ -60,8 +60,8 @@ async def on_command_error(ctx, error):
 		await ctx.send(error)
 	else:
 		randomNumber = str(random.randint(100000,999999))
-		await ctx.send("Something went wrong.. but I am not sure what. - Error code #" + randomNumber)
 		print("Error code #" +randomNumber + " - " + str(error))
+		await ctx.send("Something went wrong.. but I am not sure what. - Error code #" + randomNumber)
 
 
 # TODO - Add Custom help method
