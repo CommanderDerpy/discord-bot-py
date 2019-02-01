@@ -32,7 +32,7 @@ if __name__ == '__main__':
 		try:
 			bot.load_extension(extension)
 		except Exception as e:
-			print("Failed to load extension" + file=sys.stderr)
+			print('Failed to load extension' + sys.stderr)
 			traceback.print_exc()
 ### Extensions Cog Setup
 
