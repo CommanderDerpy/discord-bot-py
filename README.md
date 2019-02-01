@@ -22,5 +22,5 @@ $ bot-env\Scripts\activate.bat
 ```
 3. Use pip like usual:
 ```
-$ pip install -U discord.py
+$ python3 -m pip install -U git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice] bs4
 ```
