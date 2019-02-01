@@ -18,5 +18,5 @@ $ bot-env\Scripts\activate.bat
 ```
 3. Use pip like usual:
 ```
-$ pip install -U discord.py ratelimit
+$ pip install -U discord.py
 ```
