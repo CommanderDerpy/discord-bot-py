@@ -32,7 +32,7 @@ if __name__ == '__main__':
 		try:
 			bot.load_extension(extension)
 		except Exception as e:
-			print(f"Failed to load extension {extension}.", file=sys.stderr)
+			print("Failed to load extension" + file=sys.stderr)
 			traceback.print_exc()
 ### Extensions Cog Setup
 
@@ -51,7 +51,7 @@ async def on_message(message):
 
 @bot.event
 async def on_ready():
-	print(f'\nLogged in as: \t\t{bot.user.name}\nUserID:\t\t\t{bot.user.id}\nBot Owner:\t\t' +str(config['owner']) +'\n\nersion: \t\t' +version +'\nDiscord.py Version: \t{discord.__version__}\n')
+	print('\nLogged in as: \t\t{bot.user.name}\nUserID:\t\t\t{bot.user.id}\nBot Owner:\t\t' +str(config['owner']) +'\n\nersion: \t\t' +version +'\nDiscord.py Version: \t{discord.__version__}\n')
 	print('Successfully logged in and booted...!')
 
 @bot.event
