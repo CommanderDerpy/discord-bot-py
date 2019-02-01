@@ -51,7 +51,7 @@ async def on_message(message):
 
 @bot.event
 async def on_ready():
-	print('\nLogged in as: \t\t{bot.user.name}\nUserID:\t\t\t{bot.user.id}\nBot Owner:\t\t' +str(config['owner']) +'\n\nersion: \t\t' +version +'\nDiscord.py Version: \t{discord.__version__}\n')
+	print('\nLogged in as: \t\t' + bot.user.name + '\nUserID:\t\t\t' + bot.user.id + '\nBot Owner:\t\t' +str(config['owner']) +'\n\nersion: \t\t' +version +'\nDiscord.py Version: \t' +discord.__version__)
 	print('Successfully logged in and booted...!')
 
 @bot.event
@@ -60,8 +60,8 @@ async def on_command_error(ctx, error):
 		await ctx.send(error)
 	else:
 		randomNumber = str(random.randint(100000,999999))
-		print("Error code #" +randomNumber + " - " + str(error))
 		await ctx.send("Something went wrong.. but I am not sure what. - Error code #" + randomNumber)
+		print("Error code #" +randomNumber + " - " + str(error))
 
 
 # TODO - Add Custom help method
