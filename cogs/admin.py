@@ -15,7 +15,7 @@ class Admin:
 
 	def checkRoleAbleToAssign(self, strRole):
 		for role in self.bot.config['assignable_roles']:
-			if strRole.casefold() == role:
+			if strRole.casefold() == role.casefold():
 				return True
 				pass
 			pass
@@ -70,6 +70,6 @@ class Admin:
 					pass
 				else:
 					await ctx.author.add_roles(targetRole, reason='User ADDED role with iam command')
-					toSend = 'Done - I have removed the role ' +targetRole.name + ' to you'
+					toSend = 'Done - I have added the role ' +targetRole.name + ' to you'
 					pass
 				await ctx.send(toSend)
