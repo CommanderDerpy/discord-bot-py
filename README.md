@@ -1,4 +1,5 @@
 # Prime - Tarkov bot
+This is a personal project, ~~probably~~ writen in bad python as I learn the language.
 This bot is written is Discord.py (rewrite)
 
 ## Resources
