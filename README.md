@@ -24,3 +24,14 @@ $ bot-env\Scripts\activate.bat
 ```
 $ python3 -m pip install -U git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice] bs4
 ```
+
+## Setup
+
+```
+{
+  "owner" : ###,
+  "description" : "DESC",
+  "key" : "###",
+  "assignable_roles" : ["Role1", "Role2"]
+}
+```
