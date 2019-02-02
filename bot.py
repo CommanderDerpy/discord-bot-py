@@ -24,8 +24,11 @@ version = "0.0.01A"
 help = customHelp.CustomHelp()
 bot = commands.Bot(command_prefix='?', description=config['description'], formatter=help)
 
+bot.config = config
+config = None;
+
 ### Extension Cog Setup
-initial_extensions = ['cogs.tarkov']
+initial_extensions = ['cogs.admin', 'cogs.tarkov']
 
 if __name__ == '__main__':
 	for extension in initial_extensions:
@@ -39,7 +42,7 @@ if __name__ == '__main__':
 ### Overrides
 def is_owner():
 	async def predicate(ctx):
-		return ctx.author.id == config['owner']
+		return ctx.author.id == bot.config['owner']
 	return commands.check(predicate)
 
 @bot.event
@@ -51,17 +54,17 @@ async def on_message(message):
 
 @bot.event
 async def on_ready():
-	print('\nLogged in as: \t\t' + bot.user.name + '\nUserID:\t\t\t' + str(bot.user.id) + '\nBot Owner:\t\t' +str(config['owner']) +'\n\nersion: \t\t' +version +'\nDiscord.py Version: \t' + str(discord.__version__))
+	print('\nLogged in as: \t\t' + bot.user.name + '\nUserID:\t\t\t' + str(bot.user.id) + '\nBot Owner:\t\t' +str(bot.config['owner']) +'\n\nersion: \t\t' +version +'\nDiscord.py Version: \t' + str(discord.__version__))
 	print('Successfully logged in and booted...!')
 
-@bot.event
-async def on_command_error(ctx, error):
-	if isinstance(error, discord.ext.commands.CommandOnCooldown):
-		await ctx.send(error)
-	else:
-		randomNumber = str(random.randint(100000,999999))
-		await ctx.send("Something went wrong.. but I am not sure what. - Error code #" + randomNumber)
-		print("Error code #" +randomNumber + " - " + str(error))
+# @bot.event
+# async def on_command_error(ctx, error):
+# 	if isinstance(error, discord.ext.commands.CommandOnCooldown):
+# 		await ctx.send(error)
+# 	else:
+# 		randomNumber = str(random.randint(100000,999999))
+# 		await ctx.send("Something went wrong.. but I am not sure what. - Error code #" + randomNumber)
+# 		print("Error code #" +randomNumber + " - " + str(error))
 
 
 # TODO - Add Custom help method
@@ -70,5 +73,5 @@ async def on_command_error(ctx, error):
 
 ### Run
 # TODO: Set up database
-bot.run(config['key'])
+bot.run(bot.config['key'])
 ### Run
