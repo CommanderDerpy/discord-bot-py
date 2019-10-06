@@ -7,6 +7,8 @@ This bot is written is Discord.py (rewrite)
 
 ## Required
 
+You will need Python 3 - `brew install python3`
+
 1. Go to your project’s working directory:
 ```
 $ cd your-bot-source
@@ -23,7 +25,7 @@ $ bot-env\Scripts\activate.bat
 ```
 3. Use pip like usual:
 ```
-$ python3 -m pip install -U git+https://github.com/Rapptz/discord.py@rewrite#egg=discord.py[voice] bs4
+$ pip install -r requirements.txt
 ```
 
 ## Setup
