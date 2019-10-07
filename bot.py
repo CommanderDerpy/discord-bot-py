@@ -1,7 +1,15 @@
+# Discord.py imports
+
 import discord
 import CustomHelp
+# Cog Imports
+import cogs.tarkov as TarkovCog
+import cogs.random as RandomCog
+import cogs.admin as AdminCog
+# Util imports
 import helper.Embed as EmbedHelper
 from discord.ext import commands
+# Python Imports
 from datetime import datetime
 # import sys, traceback
 import logging
@@ -24,31 +32,23 @@ version = "0.0.01A"
 
 help = CustomHelp.CustomHelp()
 bot = commands.Bot(command_prefix='?', description=config['description'])
-# Add help
+# Add Custom help
 bot.help_command = CustomHelp.CustomHelp()
 
+# Set up config for bot variable.
 bot.config = config
 config = None;
 
-@bot.command(name="x", description="describe it here") #set hidden to True to hide it in the help
-async def mycommand(ctx, argument1, argument2):
-    '''A longer description of the command
-    
-    Usage example:
-    !mycommand hi 1
-    '''
-    await ctx.send(f"Got {argument1} and {argument2}")
-
 ### Extension Cog Setup
-# initial_extensions = ['cogs.admin', 'cogs.tarkov']
+initial_extensions = [TarkovCog.Tarkov(bot), RandomCog.Random(bot)]
 
-# if __name__ == '__main__':
-# 	for extension in initial_extensions:
-# 		try:
-# 			bot.load_extension(extension)
-# 		except Exception as e:
-# 			print('Failed to load extension' + sys.stderr)
-# 			traceback.print_exc()
+if __name__ == '__main__':
+	for extension in initial_extensions:
+		try:
+			bot.add_cog(extension)
+		except Exception as e:
+			print('Failed to load extension' + sys.stderr)
+			traceback.print_exc()
 ### Extensions Cog Setup
 
 ### Overrides

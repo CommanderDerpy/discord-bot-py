@@ -1,5 +1,7 @@
+# Discord.py imports
 import discord
 from discord.ext import commands
+# Python imports
 from datetime import datetime
 # Webrequest
 import aiohttp
@@ -10,15 +12,7 @@ import re
 from bs4 import BeautifulSoup
 from discord.ext.commands.cooldowns import BucketType
 
-def setup(bot):
-  #Basic class Setup
-  COG_NAME = 'Tarkov'
-  COG_NUM_FUNCTIONS = '1';
-  bot.add_cog(Tarkov(bot))
-  #Class specific additions
-  print('Loading Cog - ' +COG_NAME +' - ' +COG_NUM_FUNCTIONS + ' functions')
-
-class Tarkov:
+class Tarkov(commands.Cog):
   TAG_RE = re.compile(r'<[^>]+>')
 
   def __init__(self, bot):

@@ -2,14 +2,7 @@ import discord
 from discord.ext import commands
 from datetime import datetime
 
-def setup(bot):
-  COG_NAME = 'Random'
-  COG_NUM_FUNCTIONS = '6';
-  bot.add_cog(Random(bot))
-  print('Loading Cog - ' +COG_NAME +' - ' +COG_NUM_FUNCTIONS + ' functions')
-
-class Random:
-
+class Random(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
 
