@@ -2,14 +2,7 @@ import discord
 from discord.ext import commands
 from datetime import datetime
 
-def setup(bot):
-	COG_NAME = 'Admin'
-	COG_NUM_FUNCTIONS = '0';
-	bot.add_cog(Admin(bot))
-	print('Loading Cog - ' +COG_NAME +' - ' +COG_NUM_FUNCTIONS + ' functions')
-
-class Admin:
-
+class Admin(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
