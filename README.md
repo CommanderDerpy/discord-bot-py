@@ -4,6 +4,7 @@ This bot is written is Discord.py (rewrite)
 
 ## Resources
 [Discord.py](https://discordpy.readthedocs.io/en/latest/api.html#)
+[BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
 ## Required
 
