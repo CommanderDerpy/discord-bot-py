@@ -3,18 +3,18 @@ This is a personal project, ~~probably~~ writen in bad python as I learn the lan
 This bot is written is Discord.py (rewrite)
 
 ## Resources
-(Discord.py - Rewrite)[https://discordpy.readthedocs.io/en/rewrite/api.html]
+[Discord.py](https://discordpy.readthedocs.io/en/latest/api.html#)
 
 ## Required
 
 You will need Python 3 - `brew install python3`
 
-1. Go to your project’s working directory:
+## Setup
+1. After cloning the project, go to your project’s working directory:
 ```
-$ cd your-bot-source
+$ cd prime
 $ python3 -m venv bot-env
 ```
-
 2. Activate the virtual environment:
 ```
 $ source bot-env/bin/activate
@@ -27,8 +27,17 @@ $ bot-env\Scripts\activate.bat
 ```
 $ pip install -r requirements.txt
 ```
+4. Set up credential file
+```
+data.json
+```
+5. Use makefile to run bot.
+```
+make build
+```
 
-## Setup
+
+## data.json example
 
 ```
 {
